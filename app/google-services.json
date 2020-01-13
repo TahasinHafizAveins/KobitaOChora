@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "787877713468",
+    "firebase_url": "https://kobitaochora.firebaseio.com",
+    "project_id": "kobitaochora",
+    "storage_bucket": "kobitaochora.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:787877713468:android:e86fe45d0dda6b82941539",
+        "android_client_info": {
+          "package_name": "com.cpsdbd.kobitaochora"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "787877713468-k6et12ac4qit5smtbasfqir58lhg0ak7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.cpsdbd.kobitaochora",
+            "certificate_hash": "ee9a2645c0c0e9e5799e1d854cee576a240006b1"
+          }
+        },
+        {
+          "client_id": "787877713468-es7pkthecbc21dli2jg421l96lbeboll.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBhJbMLXKyHJRzUzBsSGV3NWcZZHAMbjSI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "787877713468-es7pkthecbc21dli2jg421l96lbeboll.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

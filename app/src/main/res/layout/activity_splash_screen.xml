@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#2196F3"
+    tools:context=".splashscreen.SplashScreenActivity"
+    android:padding="20dp">
+
+    <ImageView
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/slash_logo"
+        android:layout_above="@+id/img_title"/>
+
+   <ImageView
+       android:id="@+id/img_title"
+       android:layout_width="match_parent"
+       android:layout_margin="10dp"
+       android:layout_height="200dp"
+       android:src="@drawable/slash_title_logo"
+       android:layout_centerInParent="true"/>
+
+    <ImageView
+        android:id="@+id/cpsdLogo"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:scaleType="fitCenter"
+        android:src="@drawable/pow_cpsd" />
+
+
+</RelativeLayout>
