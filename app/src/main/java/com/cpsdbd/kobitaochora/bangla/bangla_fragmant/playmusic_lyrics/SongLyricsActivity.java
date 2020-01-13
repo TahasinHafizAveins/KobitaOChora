@@ -58,8 +58,6 @@ public class SongLyricsActivity extends AppCompatActivity implements View.OnClic
 
     }
 
-    private void setupListeners() {
-    }
 
 
     @Override
@@ -88,11 +86,9 @@ public class SongLyricsActivity extends AppCompatActivity implements View.OnClic
         }
 
 
-        imgPlayPause.setOnClickListener(this);
-        imagStop.setOnClickListener(this);
-
 
         seekBar.setMax(mediaPlayer.getDuration());
+        mediaPlayer.start();
 
         soundThread = new Thread(this);
         soundThread.start();
@@ -132,6 +128,9 @@ public class SongLyricsActivity extends AppCompatActivity implements View.OnClic
         tv_kobitaNumber.setText(kobita.getId());
         musicUrl = kobita.getKobitaPlay();
 
+        imgPlayPause.setOnClickListener(this);
+        imagStop.setOnClickListener(this);
+
         RecyclerView recyclerView = findViewById(R.id.rv_list_of_kobita);
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         recyclerView.setAdapter(adapter);
@@ -168,6 +167,18 @@ public class SongLyricsActivity extends AppCompatActivity implements View.OnClic
 
         }
         
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mediaPlayer.stop();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        mediaPlayer.stop();
     }
 
     @Override
