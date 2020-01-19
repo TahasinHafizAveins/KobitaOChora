@@ -9,6 +9,5 @@ public class SongLyricsContract {
         void getLyrics(String kobitaName);
     }
     interface View{
-        void lyrics(List<Kobita> kobitaList);
     }
 }

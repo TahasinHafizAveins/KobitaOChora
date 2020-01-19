@@ -44,6 +44,11 @@ public class LyricsAdapter extends RecyclerView.Adapter<LyricsAdapter.LyricsHold
         return lyricList.size();
     }
 
+    public void updateLyrics(List<String> lyricList){
+       this.lyricList = lyricList;
+       notifyDataSetChanged();
+    }
+
     public static class LyricsHolder extends RecyclerView.ViewHolder{
 
         TextView tvLyric;

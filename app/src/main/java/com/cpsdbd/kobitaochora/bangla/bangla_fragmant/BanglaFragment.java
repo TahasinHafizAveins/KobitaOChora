@@ -15,7 +15,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.cpsdbd.kobitaochora.R;
 import com.cpsdbd.kobitaochora.bangla.bangla_fragmant.playmusic_lyrics.SongLyricsActivity;
 import com.cpsdbd.kobitaochora.model.Kobita;
+import com.cpsdbd.kobitaochora.utils.Constant;
 
+import java.io.Serializable;
 import java.util.List;
 
 
@@ -74,7 +76,8 @@ public class BanglaFragment extends Fragment implements BanglaContract.View {
     public void startSongLyricsActivity(Kobita kobita) {
         Intent intent = new Intent(getContext(), SongLyricsActivity.class);
         Bundle bundle = new Bundle();
-        bundle.putSerializable("kobita", kobita);
+        bundle.putSerializable(Constant.POEM, kobita);
+        bundle.putSerializable(Constant.POEM_LIST, (Serializable) adapter.getKobitaList());
         intent.putExtras(bundle);
         startActivity(intent);
     }

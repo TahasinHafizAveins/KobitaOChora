@@ -77,6 +77,10 @@ public class BanglaFragmentAdapter extends RecyclerView.Adapter<BanglaFragmentAd
         return super.getItemId(position);
     }
 
+    public List<Kobita> getKobitaList(){
+        return this.kobitaList;
+    }
+
 
     public class BanglaFragmentHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 

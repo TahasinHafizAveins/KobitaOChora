@@ -36,7 +36,7 @@
         app:layout_constraintTop_toBottomOf="@id/img_logo"
         app:tabMode="fixed"/>
 
-    <androidx.viewpager2.widget.ViewPager2
+    <androidx.viewpager.widget.ViewPager
         android:id="@+id/page_viewer"
         android:layout_width="match_parent"
         android:layout_height="0dp"
