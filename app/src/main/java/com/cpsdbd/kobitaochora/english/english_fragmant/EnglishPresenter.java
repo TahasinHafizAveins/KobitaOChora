@@ -27,7 +27,7 @@ public class EnglishPresenter implements EnglishContract.Presenter {
         Log.d("tagUSer","activity ok");
         /* MyDatabase.getPoemRef().setValue("bangla");*/
 
-        MyDatabase.getPoemRef().child("engliah")
+        MyDatabase.getPoemRef().child("english")
                 .addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {

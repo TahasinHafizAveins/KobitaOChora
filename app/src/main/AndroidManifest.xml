@@ -4,6 +4,7 @@
     package="com.cpsdbd.kobitaochora">
 
     <permission android:name="android.permission.MEDIA_CONTENT_CONTROL" />
+
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
     <application
@@ -14,6 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".english.english_fragmant.playmusic_lyrics.EnglishLyricsActivity"></activity>
         <activity android:name=".bangla.bangla_fragmant.playmusic_lyrics.SongLyricsActivity" />
         <activity android:name=".main.MainActivity" />
         <activity android:name=".splashscreen.SplashScreenActivity">

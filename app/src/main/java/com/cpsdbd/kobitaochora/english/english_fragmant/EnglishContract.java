@@ -13,6 +13,7 @@ public interface  EnglishContract {
     interface View{
 
         void updateKobita(List<Kobita> kobitaList);
+        void startSongLyricsActivity(Kobita kobita);
     }
 
 }

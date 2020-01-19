@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bgartboard2"
-    tools:context=".bangla.bangla_fragmant.playmusic_lyrics.SongLyricsActivity">
+    tools:context=".english.english_fragmant.playmusic_lyrics.EnglishLyricsActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar_song_lyrics"
@@ -16,10 +17,10 @@
         android:padding="2dp"
         android:background="@color/colorPrimary" >
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:src="@drawable/nav_logo"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/nav_logo"/>
 
 
     </androidx.appcompat.widget.Toolbar>
@@ -151,5 +152,4 @@
             android:layout_marginEnd="2dp"/>
 
     </RelativeLayout>
-
 </RelativeLayout>

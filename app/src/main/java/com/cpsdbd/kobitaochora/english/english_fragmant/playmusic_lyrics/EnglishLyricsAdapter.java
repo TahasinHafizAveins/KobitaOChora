@@ -1,29 +1,28 @@
-package com.cpsdbd.kobitaochora.bangla.bangla_fragmant.playmusic_lyrics;
+package com.cpsdbd.kobitaochora.english.english_fragmant.playmusic_lyrics;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.cpsdbd.kobitaochora.R;
+import com.cpsdbd.kobitaochora.bangla.bangla_fragmant.playmusic_lyrics.LyricsAdapter;
 
 import java.util.List;
 
-public class LyricsAdapter extends RecyclerView.Adapter<LyricsAdapter.LyricsHolder> {
+public class EnglishLyricsAdapter extends RecyclerView.Adapter<EnglishLyricsAdapter.LyricsHolder> {
 
-
-    private SongLyricsActivity activity;
+    private EnglishLyricsActivity englishLyricsActivity;
     private List<String> lyricList;
     private LayoutInflater inflater;
 
-    public LyricsAdapter(SongLyricsActivity activity, List<String> lyricList) {
-        this.activity = activity;
+    public EnglishLyricsAdapter(EnglishLyricsActivity englishLyricsActivity, List<String> lyricList) {
+        this.englishLyricsActivity = englishLyricsActivity;
         this.lyricList = lyricList;
-        this.inflater = LayoutInflater.from(activity);
+        this.inflater = LayoutInflater.from(englishLyricsActivity);
     }
 
     @NonNull
@@ -44,7 +43,7 @@ public class LyricsAdapter extends RecyclerView.Adapter<LyricsAdapter.LyricsHold
         return lyricList.size();
     }
 
-    public static class LyricsHolder extends RecyclerView.ViewHolder{
+    public class LyricsHolder extends RecyclerView.ViewHolder {
 
         TextView tvLyric;
 
@@ -53,8 +52,8 @@ public class LyricsAdapter extends RecyclerView.Adapter<LyricsAdapter.LyricsHold
             tvLyric =  itemView.findViewById(R.id.lyric);
         }
 
-        public void bind(String lyric){
-            tvLyric.setText(lyric);
+        public void bind(String ll) {
+            tvLyric.setText(ll);
         }
     }
 }

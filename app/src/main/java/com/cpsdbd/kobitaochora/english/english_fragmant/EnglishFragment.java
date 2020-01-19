@@ -1,6 +1,7 @@
 package com.cpsdbd.kobitaochora.english.english_fragmant;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +15,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.cpsdbd.kobitaochora.R;
 import com.cpsdbd.kobitaochora.bangla.bangla_fragmant.BanglaFragmentAdapter;
 import com.cpsdbd.kobitaochora.bangla.bangla_fragmant.BanglaPresenter;
+import com.cpsdbd.kobitaochora.bangla.bangla_fragmant.playmusic_lyrics.SongLyricsActivity;
+import com.cpsdbd.kobitaochora.english.english_fragmant.playmusic_lyrics.EnglishLyricsActivity;
 import com.cpsdbd.kobitaochora.model.Kobita;
 
 import java.util.List;
@@ -65,5 +68,14 @@ public class EnglishFragment extends Fragment implements EnglishContract.View {
         {
             adapter.addKobita(kobita);
         }
+    }
+
+    @Override
+    public void startSongLyricsActivity(Kobita kobita) {
+        Intent intent = new Intent(getContext(), EnglishLyricsActivity.class);
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("kobita", kobita);
+        intent.putExtras(bundle);
+        startActivity(intent);
     }
 }

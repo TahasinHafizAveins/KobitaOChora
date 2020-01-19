@@ -97,6 +97,7 @@ public class EnglishFragmentAdapter extends RecyclerView.Adapter<EnglishFragment
 
         @Override
         public void onClick(View v) {
+            englishFragment.startSongLyricsActivity(kobitaList.get(getAdapterPosition()));
             Log.d("LogResult","Activity Start");
         }
     }
