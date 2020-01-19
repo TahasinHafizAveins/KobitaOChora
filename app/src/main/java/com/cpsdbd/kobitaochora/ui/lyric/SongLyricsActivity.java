@@ -17,12 +17,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.cpsdbd.kobitaochora.R;
 import com.cpsdbd.kobitaochora.model.Kobita;
+import com.cpsdbd.kobitaochora.ui.main.BaseActivity;
 import com.cpsdbd.kobitaochora.utils.Constant;
 
 import java.io.IOException;
 import java.util.List;
 
-public class SongLyricsActivity extends AppCompatActivity implements View.OnClickListener, Runnable {
+public class SongLyricsActivity extends BaseActivity implements View.OnClickListener, Runnable {
 
     private Kobita kobita;
     private Toolbar toolbar;
@@ -138,6 +139,8 @@ public class SongLyricsActivity extends AppCompatActivity implements View.OnClic
         toolbar = findViewById(R.id.toolbar_song_lyrics);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("");
+
+        setAds();
 
         tv_kobitaName = findViewById(R.id.toolbar_kobita_name);
         tv_kobitaNumber = findViewById(R.id.toolbar_kobita_number);
