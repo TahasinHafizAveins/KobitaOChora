@@ -16,9 +16,9 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity android:name=".english.english_fragmant.playmusic_lyrics.EnglishLyricsActivity"></activity>
-        <activity android:name=".bangla.bangla_fragmant.playmusic_lyrics.SongLyricsActivity" />
-        <activity android:name=".main.MainActivity" />
-        <activity android:name=".splashscreen.SplashScreenActivity">
+        <activity android:name=".ui.lyric.SongLyricsActivity" />
+        <activity android:name=".ui.main.MainActivity" />
+        <activity android:name=".ui.splashscreen.SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

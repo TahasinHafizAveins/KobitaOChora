@@ -1,4 +1,4 @@
-package com.cpsdbd.kobitaochora.splashscreen;
+package com.cpsdbd.kobitaochora.ui.splashscreen;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.cpsdbd.kobitaochora.R;
-import com.cpsdbd.kobitaochora.main.MainActivity;
+import com.cpsdbd.kobitaochora.ui.main.MainActivity;
 
 public class SplashScreenActivity extends AppCompatActivity {
 

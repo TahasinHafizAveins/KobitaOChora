@@ -1,4 +1,4 @@
-package com.cpsdbd.kobitaochora.main;
+package com.cpsdbd.kobitaochora.ui.main;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;

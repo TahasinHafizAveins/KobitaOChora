@@ -1,4 +1,4 @@
-package com.cpsdbd.kobitaochora.bangla.bangla_fragmant;
+package com.cpsdbd.kobitaochora.ui.main.base;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -15,15 +15,15 @@ import com.cpsdbd.kobitaochora.model.Kobita;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BanglaFragmentAdapter extends RecyclerView.Adapter<BanglaFragmentAdapter.BanglaFragmentHolder>{
+public class BaseFragmentAdapter extends RecyclerView.Adapter<BaseFragmentAdapter.BanglaFragmentHolder>{
 
-    private BanglaFragment banglaFragment;
+    private BaseFragment baseFragment;
     private LayoutInflater inflater;
     private List<Kobita> kobitaList;
 
-    public BanglaFragmentAdapter(BanglaFragment banglaFragment) {
-        this.banglaFragment = banglaFragment;
-        this.inflater =  LayoutInflater.from(banglaFragment.getContext());
+    public BaseFragmentAdapter(BaseFragment baseFragment) {
+        this.baseFragment = baseFragment;
+        this.inflater =  LayoutInflater.from(baseFragment.getContext());
         this.kobitaList = new ArrayList<>();
     }
 
@@ -32,7 +32,7 @@ public class BanglaFragmentAdapter extends RecyclerView.Adapter<BanglaFragmentAd
     public BanglaFragmentHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         View view = inflater.inflate(R.layout.item_kobita_o_chora, parent ,false);
-        return new BanglaFragmentAdapter.BanglaFragmentHolder(view);
+        return new BaseFragmentAdapter.BanglaFragmentHolder(view);
     }
 
     @Override
@@ -103,7 +103,7 @@ public class BanglaFragmentAdapter extends RecyclerView.Adapter<BanglaFragmentAd
 
         @Override
         public void onClick(View v) {
-            banglaFragment.startSongLyricsActivity(kobitaList.get(getAdapterPosition()));
+            baseFragment.startSongLyricsActivity(kobitaList.get(getAdapterPosition()));
             Log.d("LogResult","Activity Start");
         }
     }

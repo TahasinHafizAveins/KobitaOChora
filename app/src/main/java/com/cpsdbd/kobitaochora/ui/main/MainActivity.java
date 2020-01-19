@@ -1,24 +1,24 @@
- package com.cpsdbd.kobitaochora.main;
+ package com.cpsdbd.kobitaochora.ui.main;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
-import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
 
 import com.cpsdbd.kobitaochora.R;
-import com.cpsdbd.kobitaochora.bangla.bangla_fragmant.BanglaFragment;
-import com.cpsdbd.kobitaochora.english.english_fragmant.EnglishFragment;
+import com.cpsdbd.kobitaochora.ui.main.base.BaseFragment;
+import com.cpsdbd.kobitaochora.model.Kobita;
 import com.google.android.material.tabs.TabLayout;
-import com.google.android.material.tabs.TabLayoutMediator;
+
+import java.util.List;
 
 
- public class MainActivity extends AppCompatActivity {
+ public class MainActivity extends AppCompatActivity implements MainContract.View {
 
      private TabLayout tabLayout;
      private ViewPager viewPager;
      private ViewPagerAdapter pagerAdapter;
+     private MainPresenter mPresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +31,10 @@ import com.google.android.material.tabs.TabLayoutMediator;
         setupViewPager(viewPager);
         tabLayout.setupWithViewPager(viewPager);
 
+        mPresenter = new MainPresenter(this);
+
+        mPresenter.getAllPoem();
+
     }
 
      private void setupViewPager(ViewPager viewPager) {
@@ -38,11 +42,21 @@ import com.google.android.material.tabs.TabLayoutMediator;
          if(pagerAdapter==null){
              pagerAdapter = new ViewPagerAdapter(getSupportFragmentManager(),0);
          }
-         pagerAdapter.addFragment(new BanglaFragment(), getString(R.string.bangla));
-         pagerAdapter.addFragment(new EnglishFragment(), getString(R.string.english));
+         pagerAdapter.addFragment(new BaseFragment(), getString(R.string.bangla));
+         pagerAdapter.addFragment(new BaseFragment(), getString(R.string.english));
 
          viewPager.setAdapter(pagerAdapter);
 
 
      }
-}
+
+
+     @Override
+     public void updateFragment(List<Kobita> banglaPoems, List<Kobita> englishPoems) {
+        BaseFragment banglaFragment = (BaseFragment) pagerAdapter.getItem(0);
+        BaseFragment englishFragment = (BaseFragment) pagerAdapter.getItem(1);
+
+        banglaFragment.updateKobita(banglaPoems);
+        englishFragment.updateKobita(englishPoems);
+     }
+ }

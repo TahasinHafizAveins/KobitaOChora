@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bgartboard2"
-    tools:context=".bangla.bangla_fragmant.playmusic_lyrics.SongLyricsActivity">
+    tools:context=".ui.lyric.SongLyricsActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar_song_lyrics"

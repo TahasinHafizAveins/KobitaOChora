@@ -1,14 +1,12 @@
-package com.cpsdbd.kobitaochora.bangla.bangla_fragmant.playmusic_lyrics;
+package com.cpsdbd.kobitaochora.ui.lyric;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.os.Handler;
 import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -24,7 +22,7 @@ import com.cpsdbd.kobitaochora.utils.Constant;
 import java.io.IOException;
 import java.util.List;
 
-public class SongLyricsActivity extends AppCompatActivity implements View.OnClickListener, Runnable, SongLyricsContract.View {
+public class SongLyricsActivity extends AppCompatActivity implements View.OnClickListener, Runnable {
 
     private Kobita kobita;
     private Toolbar toolbar;
@@ -32,7 +30,6 @@ public class SongLyricsActivity extends AppCompatActivity implements View.OnClic
     ImageButton imgPlayPause, imagStop, imgNext, imgPrev;
     SeekBar seekBar;
     private Thread soundThread;
-    private SongLyricsPresenter mPresenter;
     private List<Kobita> kobitaList;
 
     MediaPlayer mediaPlayer;
@@ -49,7 +46,7 @@ public class SongLyricsActivity extends AppCompatActivity implements View.OnClic
         this.kobita = (Kobita) getIntent().getSerializableExtra(Constant.POEM);
         this.kobitaList = (List<Kobita>) getIntent().getSerializableExtra(Constant.POEM_LIST);
 
-        mPresenter = new SongLyricsPresenter(this);
+
         currentPositon = getPosition();
 
         adapter = new LyricsAdapter(this, kobita.getKobitaLyrics());

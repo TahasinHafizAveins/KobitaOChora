@@ -14,6 +14,6 @@ public class MyDatabase {
     }
 
     public static DatabaseReference getPoemRef(){
-       return rootRef.child(KOBITA) ;
+       return rootRef ;
     }
 }

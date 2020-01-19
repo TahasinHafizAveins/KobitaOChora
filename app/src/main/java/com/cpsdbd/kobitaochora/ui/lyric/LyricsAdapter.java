@@ -1,4 +1,4 @@
-package com.cpsdbd.kobitaochora.english.english_fragmant.playmusic_lyrics;
+package com.cpsdbd.kobitaochora.ui.lyric;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,20 +9,20 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.cpsdbd.kobitaochora.R;
-import com.cpsdbd.kobitaochora.bangla.bangla_fragmant.playmusic_lyrics.LyricsAdapter;
 
 import java.util.List;
 
-public class EnglishLyricsAdapter extends RecyclerView.Adapter<EnglishLyricsAdapter.LyricsHolder> {
+public class LyricsAdapter extends RecyclerView.Adapter<LyricsAdapter.LyricsHolder> {
 
-    private EnglishLyricsActivity englishLyricsActivity;
+
+    private SongLyricsActivity activity;
     private List<String> lyricList;
     private LayoutInflater inflater;
 
-    public EnglishLyricsAdapter(EnglishLyricsActivity englishLyricsActivity, List<String> lyricList) {
-        this.englishLyricsActivity = englishLyricsActivity;
+    public LyricsAdapter(SongLyricsActivity activity, List<String> lyricList) {
+        this.activity = activity;
         this.lyricList = lyricList;
-        this.inflater = LayoutInflater.from(englishLyricsActivity);
+        this.inflater = LayoutInflater.from(activity);
     }
 
     @NonNull
@@ -43,7 +43,12 @@ public class EnglishLyricsAdapter extends RecyclerView.Adapter<EnglishLyricsAdap
         return lyricList.size();
     }
 
-    public class LyricsHolder extends RecyclerView.ViewHolder {
+    public void updateLyrics(List<String> lyricList){
+       this.lyricList = lyricList;
+       notifyDataSetChanged();
+    }
+
+    public static class LyricsHolder extends RecyclerView.ViewHolder{
 
         TextView tvLyric;
 
@@ -52,8 +57,8 @@ public class EnglishLyricsAdapter extends RecyclerView.Adapter<EnglishLyricsAdap
             tvLyric =  itemView.findViewById(R.id.lyric);
         }
 
-        public void bind(String ll) {
-            tvLyric.setText(ll);
+        public void bind(String lyric){
+            tvLyric.setText(lyric);
         }
     }
 }

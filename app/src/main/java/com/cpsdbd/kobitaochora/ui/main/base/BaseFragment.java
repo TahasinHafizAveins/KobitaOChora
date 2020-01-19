@@ -1,4 +1,4 @@
-package com.cpsdbd.kobitaochora.bangla.bangla_fragmant;
+package com.cpsdbd.kobitaochora.ui.main.base;
 
 
 import android.content.Intent;
@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.cpsdbd.kobitaochora.R;
-import com.cpsdbd.kobitaochora.bangla.bangla_fragmant.playmusic_lyrics.SongLyricsActivity;
+import com.cpsdbd.kobitaochora.ui.lyric.SongLyricsActivity;
 import com.cpsdbd.kobitaochora.model.Kobita;
 import com.cpsdbd.kobitaochora.utils.Constant;
 
@@ -24,14 +24,14 @@ import java.util.List;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class BanglaFragment extends Fragment implements BanglaContract.View {
+public class BaseFragment extends Fragment  {
 
-    BanglaPresenter mPresenter;
-    private BanglaFragmentAdapter adapter;
+
+    private BaseFragmentAdapter adapter;
     private RecyclerView rv_kobitaList;
 
 
-    public BanglaFragment() {
+    public BaseFragment() {
         // Required empty public constructor
     }
 
@@ -39,16 +39,14 @@ public class BanglaFragment extends Fragment implements BanglaContract.View {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        mPresenter = new BanglaPresenter(this);
-        adapter = new BanglaFragmentAdapter(this);
+        adapter = new BaseFragmentAdapter(this);
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view =  inflater.inflate(R.layout.fragment_bangla, container, false);
+        View view =  inflater.inflate(R.layout.fragment_base, container, false);
         initView(view);
         return view;
 
@@ -59,11 +57,10 @@ public class BanglaFragment extends Fragment implements BanglaContract.View {
         rv_kobitaList.setLayoutManager(new LinearLayoutManager(this.getContext()));
         rv_kobitaList.setAdapter(adapter);
 
-        mPresenter.getAllKobita();
     }
 
 
-    @Override
+
     public void updateKobita(List<Kobita> kobitaList) {
 
         for (Kobita kobita : kobitaList)
@@ -72,7 +69,7 @@ public class BanglaFragment extends Fragment implements BanglaContract.View {
         }
     }
 
-    @Override
+
     public void startSongLyricsActivity(Kobita kobita) {
         Intent intent = new Intent(getContext(), SongLyricsActivity.class);
         Bundle bundle = new Bundle();
