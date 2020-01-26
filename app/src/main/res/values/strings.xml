@@ -2,5 +2,9 @@
     <string name="app_name">KobitaOChora</string>
     <string name="english" translatable="false">English</string>
     <string name="bangla">বাংলা</string>
-    <string name="todo">TODO</string>
+    <string name="todo" translatable="false">TODO</string>
+    <string name="no_connection_msg" translatable="false">Please turn on internet connection to continue.Press OK to exit</string>
+    <string name="no_connection_title" translatable="false">No internet Connection</string>
+    <string name="settings_button_text" translatable="false">OK</string>
+    <string name="cancel_button_text" translatable="false">Cancel</string>
 </resources>

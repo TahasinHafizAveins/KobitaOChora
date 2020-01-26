@@ -8,14 +8,15 @@ import com.cpsdbd.kobitaochora.firebase.MyDatabase;
 import com.cpsdbd.kobitaochora.model.Kobita;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainPresenter implements MainContract.Presenter {
 
     private MainContract.View mView;
+
 
     public MainPresenter(MainContract.View mView) {
         this.mView = mView;
@@ -24,6 +25,8 @@ public class MainPresenter implements MainContract.Presenter {
     @Override
     public void getAllPoem() {
         Log.d("tagUSer","activity ok");
+        FirebaseDatabase.getInstance().setPersistenceEnabled(true);
+        MyDatabase.getPoemRef().keepSynced(true);
 
         MyDatabase.getPoemRef().addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
@@ -58,5 +61,6 @@ public class MainPresenter implements MainContract.Presenter {
                         Log.d("tagUSer","data failed");
                     }
                 });
+
     }
 }

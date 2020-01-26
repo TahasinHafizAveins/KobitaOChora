@@ -42,11 +42,10 @@ public class SongLyricsActivity extends BaseActivity implements View.OnClickList
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_song_lyrics);
 
+        setContentView(R.layout.activity_song_lyrics);
         this.kobita = (Kobita) getIntent().getSerializableExtra(Constant.POEM);
         this.kobitaList = (List<Kobita>) getIntent().getSerializableExtra(Constant.POEM_LIST);
-
 
         currentPositon = getPosition();
 
@@ -74,6 +73,7 @@ public class SongLyricsActivity extends BaseActivity implements View.OnClickList
 
         tv_kobitaName.setText(kobita.getKobitaName());
         tv_kobitaNumber.setText(kobita.getId());
+        imgPlayPause.setImageResource(R.drawable.player_pause);
         adapter.updateLyrics(kobita.getKobitaLyrics());
 
         try {
@@ -248,7 +248,7 @@ public class SongLyricsActivity extends BaseActivity implements View.OnClickList
 
         while (mediaPlayer != null && position < soundTotal) {
             try {
-                Thread.sleep(300);
+                Thread.sleep(100);
                 position = mediaPlayer.getCurrentPosition();
             } catch (InterruptedException soundException) {
                 return;
@@ -259,6 +259,7 @@ public class SongLyricsActivity extends BaseActivity implements View.OnClickList
         }
 
     }
+
 
 }
 

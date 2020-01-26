@@ -29,21 +29,29 @@ import java.util.List;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
 
-        setAds();
+        if( !isOnline()){
+            showNoConnectionDialog(this);
+        }
 
-        viewPager = findViewById(R.id.page_viewer);
-        tabLayout = findViewById(R.id.tablayout);
+        else {
+            setContentView(R.layout.activity_main);
 
-        setupViewPager(viewPager);
-        tabLayout.setupWithViewPager(viewPager);
+            setAds();
+
+            viewPager = findViewById(R.id.page_viewer);
+            tabLayout = findViewById(R.id.tablayout);
+
+            setupViewPager(viewPager);
+            tabLayout.setupWithViewPager(viewPager);
 
 
+            mPresenter = new MainPresenter(this);
 
-        mPresenter = new MainPresenter(this);
+            mPresenter.getAllPoem();
+        }
 
-        mPresenter.getAllPoem();
+
 
     }
 
