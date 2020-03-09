@@ -42,17 +42,9 @@ public class BaseActivity extends AppCompatActivity {
         mAdView.loadAd(adRequest);
     }
 
-    @Override
-    public void onBackPressed()
-    {
-        // code here to show dialog
-        super.onBackPressed();  // optional depending on your needs
-    }
 
-    @Override
-    public void onResume(){
-        super.onResume();
-    }
+
+
 
     public static void showNoConnectionDialog(Context ctx1)
     {
@@ -100,4 +92,12 @@ public class BaseActivity extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
     }
+
+   /* @Override
+    public void onBackPressed(){
+        Intent a = new Intent(Intent.ACTION_MAIN);
+        a.addCategory(Intent.CATEGORY_HOME);
+        a.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(a);
+    }*/
 }

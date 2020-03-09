@@ -3,6 +3,7 @@ package com.cpsdbd.kobitaochora.ui.main.base;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -47,6 +48,7 @@ public class BaseFragment extends Fragment  {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_base, container, false);
+
         initView(view);
         return view;
 
@@ -65,7 +67,9 @@ public class BaseFragment extends Fragment  {
 
         for (Kobita kobita : kobitaList)
         {
-            adapter.addKobita(kobita);
+            if (kobita != null) {
+                adapter.addKobita(kobita);
+            }
         }
     }
 

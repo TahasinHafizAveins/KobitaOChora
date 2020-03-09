@@ -25,6 +25,7 @@ public class MainPresenter implements MainContract.Presenter {
     @Override
     public void getAllPoem() {
         Log.d("tagUSer","activity ok");
+
         FirebaseDatabase.getInstance().setPersistenceEnabled(true);
         MyDatabase.getPoemRef().keepSynced(true);
 
@@ -33,6 +34,7 @@ public class MainPresenter implements MainContract.Presenter {
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         Log.d("tagUSer","data recieve");
                         Log.d("tagUSer",dataSnapshot.toString());
+
                         List<Kobita> banglaPoems = new ArrayList<>();
                         List<Kobita> englishPoems = new ArrayList<>();
 
@@ -50,10 +52,16 @@ public class MainPresenter implements MainContract.Presenter {
                                     englishPoems.add(y.getValue(Kobita.class));
                                 }
                             }
+
+
                         }
 
-                        mView.updateFragment(banglaPoems,englishPoems);
-
+                        if (banglaPoems != null && englishPoems != null){
+                            mView.updateFragment(banglaPoems,englishPoems);
+                        }
+                        else {
+                            return;
+                        }
                     }
 
                     @Override

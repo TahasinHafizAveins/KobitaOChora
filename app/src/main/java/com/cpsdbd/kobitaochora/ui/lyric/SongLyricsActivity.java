@@ -2,6 +2,7 @@ package com.cpsdbd.kobitaochora.ui.lyric;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -18,10 +19,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.cpsdbd.kobitaochora.R;
 import com.cpsdbd.kobitaochora.model.Kobita;
 import com.cpsdbd.kobitaochora.ui.main.BaseActivity;
+import com.cpsdbd.kobitaochora.ui.main.MainActivity;
 import com.cpsdbd.kobitaochora.utils.Constant;
 
 import java.io.IOException;
 import java.util.List;
+
+import static java.security.AccessController.getContext;
 
 public class SongLyricsActivity extends BaseActivity implements View.OnClickListener, Runnable {
 
@@ -260,6 +264,10 @@ public class SongLyricsActivity extends BaseActivity implements View.OnClickList
 
     }
 
-
+    @Override
+    public void onBackPressed() {
+        Log.d("onback","fcvfvf");
+        super.onBackPressed();
+    }
 }
 
